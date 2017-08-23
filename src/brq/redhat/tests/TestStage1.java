@@ -4,7 +4,6 @@ import static org.assertj.core.api.Assertions.*;
 
 import java.math.BigDecimal;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import brq.redhat.main.Stage1;
@@ -15,14 +14,7 @@ public class TestStage1 {
 	
 	private static final String PERSON_NAME = "Rodriguez";
 	private static final int AGE = 22;
-	Person p;
-
-
-	@BeforeClass
-	public void setUp() {
-		p = Stage1.preparePerson(PERSON_NAME, AGE);
-		
-	}
+	Person p = Stage1.preparePerson(PERSON_NAME, AGE);
 
 	@Test
 	public void testPreparingPerson() {
