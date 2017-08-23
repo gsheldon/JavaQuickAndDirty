@@ -15,7 +15,7 @@ public class TestStage1 {
 	
 	private static final String PERSON_NAME = "Rodriguez";
 	private static final int AGE = 22;
-	Person p = Stage1.preparePerson(PERSON_NAME, AGE);
+	private Person p = Stage1.preparePerson(PERSON_NAME, AGE);
 
 
 	@Test
