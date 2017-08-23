@@ -10,13 +10,10 @@ public class Accountant extends Person {
 		if(salaryToCount == null) {
 			salaryToCount = this.salary;
 		}
-		
-		// Multiply the salaryToCount with tax
-		// The tax variable is a double. You need to transform it into a BigDecimal
-		// BigDecimal can be created from a double as follows: new BigDecimal(doubleValue)
 
-		BigDecimal bigDecimalTax = null;
-		BigDecimal result = null;
+
+		BigDecimal bigDecimalTax = new BigDecimal(tax);
+		BigDecimal result = salaryToCount.multiply(bigDecimalTax);
 		
 		return result.doubleValue();
 	}

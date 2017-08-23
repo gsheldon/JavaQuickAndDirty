@@ -9,12 +9,7 @@ public class Person {
 	
 	
 	public String getName() {
-		// TODO: Implement getter for name
-		// this method should return the name of the current instance of this class
-		// currently, it always returns Mark
-		// Do not hard code a name; rather, return the instance 'name' variable
-
-		return "Mark";
+		return this.name;
 	}
 	public void setName(String name) {
 		this.name = name;
@@ -34,10 +29,7 @@ public class Person {
 	}
 	
 	public String greetings() {
-		// TODO: Implement this method to return a text (String) which uses the class name
-		// For example, if you set the person's name to Rodriguez, it should say 
-		// Hello, my name is Rodriguez
-		return "Bite my shiny metal ass.";
+		return "Hi, my name is "+this.name;
 	}
 
 

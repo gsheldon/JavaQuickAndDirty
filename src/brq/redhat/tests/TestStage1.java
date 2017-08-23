@@ -15,14 +15,8 @@ public class TestStage1 {
 	
 	private static final String PERSON_NAME = "Rodriguez";
 	private static final int AGE = 22;
-	Person p;
+	Person p = Stage1.preparePerson(PERSON_NAME, AGE);
 
-
-	@BeforeClass
-	public void setUp() {
-		p = Stage1.preparePerson(PERSON_NAME, AGE);
-		
-	}
 
 	@Test
 	public void testPreparingPerson() {
