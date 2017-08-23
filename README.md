@@ -58,3 +58,7 @@ The exercise in the `Stage1` branch consists of three packages in the `src` sour
 ![Failing JUnit](md_images/junit_correct.png) 
 
 Each failing test has a reason in the *Failure Trace* window. If you believe your implementation is correct but the test for the implementation still fails, work with the errors to understand what is incorrect. Do not change the tests. 
+
+## Resources
+
+How you implement the classes is up to you. For example, whether you use setters, or set private fields in a constructors does not matter to the JUnit tests. If you are lost at this stage, I recommend to read the [Java object Classes](https://www.tutorialspoint.com/java/java_object_classes.htm) tutorial. In particular, focus on the following sections: _Objects in Java_, _Classes in Java_, and _Accessing Instance Variables and Methods_. That should give you sufficient background to finish this exercise.
