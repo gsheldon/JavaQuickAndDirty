@@ -33,11 +33,11 @@ public class Person {
 	}
 
 
-    @Override
-    public boolean equals(Object p) {
-	    if( !(p instanceof Person) ){
-	        return false;
-        }
+	@Override
+	public boolean equals(Object p) {
+		if( !(p instanceof Person) ){
+	    	return false;
+    	}
 
         return this.name.equals( ((Person)p).getName() ) && this.age == ((Person)p).getAge();
     }

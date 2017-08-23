@@ -10,11 +10,11 @@ public class Stage1 {
 		// First, open brq.redhat.main.Person and finish implementing the class
 
 		// Then, create a new instance of the person object
-        p = new Person();
+		p = new Person();
 		// Set the name and age variables to the person instance
-        p.setAge(age);
-        p.setName(name);
-        // returning p that should be instantiated and set by now
+		p.setAge(age);
+		p.setName(name);
+		// returning p that should be instantiated and set by now
 		return p;
 	}
 	
