@@ -11,11 +11,11 @@ import brq.redhat.main.Stage1;
 import brq.redhat.model.Accountant;
 import brq.redhat.model.Person;
 
-public class Test1 {
+public class TestStage1 {
 	
 	private static final String PERSON_NAME = "Rodriguez";
 	private static final int AGE = 22;
-	Person p = null;
+	Person p;
 
 
 	@Before
@@ -26,12 +26,9 @@ public class Test1 {
 
 	@Test
 	public void testPreparingPerson() {
-		
 		assertThat(p).as("The Stage1.preparePerson method returns null when it is not implemented. It should return a Person instance").isNotNull();
 		assertThat(p.getName()).as("The Person.getName() method is unimplemented. It should return set name.").isEqualTo(PERSON_NAME);
-		
-		//assertTrue("The person's name was different", p.getName().equals(personName));
-	}
+    }
 	
 	@Test
 	public void testPersonGreetings() {
