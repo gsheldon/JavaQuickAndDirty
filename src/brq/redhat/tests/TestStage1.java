@@ -4,7 +4,6 @@ import static org.assertj.core.api.Assertions.*;
 
 import java.math.BigDecimal;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import brq.redhat.main.Stage1;
