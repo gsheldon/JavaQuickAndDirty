@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import java.math.BigDecimal;
 
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import brq.redhat.main.Stage1;
@@ -18,7 +18,7 @@ public class TestStage1 {
 	Person p;
 
 
-	@Before
+	@BeforeClass
 	public void setUp() {
 		p = Stage1.preparePerson(PERSON_NAME, AGE);
 		
@@ -27,19 +27,19 @@ public class TestStage1 {
 	@Test
 	public void testPreparingPerson() {
 		assertThat(p)
-                .as("The Stage1.preparePerson method returns null when it is not implemented. It should return a Person instance")
-                .isNotNull();
+                    .as("The Stage1.preparePerson method returns null when it is not implemented. It should return a Person instance")
+                    .isNotNull();
 
 		assertThat(p.getName())
-                .as("The Person.getName() method is unimplemented. It should return set name.")
-                .isEqualTo(PERSON_NAME);
+                    .as("The Person.getName() method is unimplemented. It should return set name.")
+                    .isEqualTo(PERSON_NAME);
     }
 	
 	@Test
 	public void testPersonGreetings() {
 		assertThat(p.greetings())
-                .as("The greeting String should contain %s",PERSON_NAME)
-                .contains(PERSON_NAME);
+                    .as("The greeting String should contain %s",PERSON_NAME)
+                    .contains(PERSON_NAME);
 	}
 	
 	@Test
@@ -51,12 +51,12 @@ public class TestStage1 {
 		a.setSalary(givenSalary);
 		
 		assertThat(a.countTaxes(givenSalary, tax))
-                .as("Counting taxes out of set, external salary.")
-                .isEqualTo(100.0);
+                    .as("Counting taxes out of set, external salary.")
+                    .isEqualTo(100.0);
 
 		assertThat(a.countTaxes(null, tax))
-                .as("Counting taxes out of its own salary.")
-                .isEqualTo(100.0);
+                    .as("Counting taxes out of its own salary.")
+                    .isEqualTo(100.0);
 	}
 
 }
