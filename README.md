@@ -55,7 +55,7 @@ The exercise in the `Stage1` branch consists of three packages in the `src` sour
  
  As of right now, the tests fail and that is correct. When you successfully implement the classes, you will see the following:
  
-![Failing JUnit](md_images/junit_correct.png) 
+![Passing JUnit](md_images/junit_correct.png) 
 
 Each failing test has a reason in the *Failure Trace* window. If you believe your implementation is correct but the test for the implementation still fails, work with the errors to understand what is incorrect. Do not change the tests. 
 
