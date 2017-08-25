@@ -41,4 +41,11 @@ public class Person {
 
         return this.name.equals( ((Person)p).getName() ) && this.age == ((Person)p).getAge();
     }
+
+	@Override
+	public int hashCode() {
+		int result = name.hashCode();
+		result = 31 * result + age;
+		return result;
+	}
 }

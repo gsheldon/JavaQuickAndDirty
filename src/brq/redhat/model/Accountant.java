@@ -11,7 +11,6 @@ public class Accountant extends Person {
 			salaryToCount = this.salary;
 		}
 
-
 		BigDecimal bigDecimalTax = new BigDecimal(tax);
 		BigDecimal result = salaryToCount.multiply(bigDecimalTax);
 		
