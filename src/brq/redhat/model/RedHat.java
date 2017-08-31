@@ -26,9 +26,9 @@ public class RedHat {
 		// If yes, return true.
 		// Otherwise, return false.
 
-
-
-		return false;
+		// A small hack. Otherwise, you could get an interator via
+		// database.iterator, and iterate through the hashset that way
+		return database.contains(p);
 	}
 
 	public boolean makeCoffee(Person p, CoffeeMachine coffeeMachine){
@@ -43,8 +43,19 @@ public class RedHat {
 		// If the person can enter and the coffee machine made coffee, return true.
 		// If the person can enter and the coffee machine is jammed, return false.
 
+		if(!canEnter(p)){
+			return false;
+		}
+		// First, let's try to make coffee
+		boolean madeCoffee = coffeeMachine.makeCoffee();
 
-		return false;
+		// If it was unsuccessful AND the coffee machine is NOT jammed, the coffee machine is probably just empty. Refill it and try again
+		if(!madeCoffee && !coffeeMachine.isJammed()){
+			coffeeMachine.refill();
+			madeCoffee = coffeeMachine.makeCoffee();
+		}
+		// if the coffee machine is jammed, we return false. Otherwise, we return true
+		return madeCoffee;
 	}
 
 
