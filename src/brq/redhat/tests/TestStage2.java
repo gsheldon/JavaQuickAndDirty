@@ -6,6 +6,11 @@ import brq.redhat.model.Person;
 import brq.redhat.model.RedHat;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestStage2 {
@@ -60,6 +65,41 @@ public class TestStage2 {
 		assertThat(brq.makeCoffee(PERSON_CANNOT_ENTER,jammedMachine))
 				.as("Person cannot enter -> no matter the machine, return false")
 				.isEqualTo(false);
+	}
+	@Test
+	public void testNonNaiveCoffeePreparation(){
+		CoffeeMachine fullMachine = new CoffeeMachine();
+		fullMachine.refill();
+
+
+		List<Boolean> madeCoffee = new ArrayList<>();
+
+		for(int i = 0; i<21;i++){
+			madeCoffee.add(brq.makeCoffee(PERSON_CAN_ENTER,fullMachine));
+		}
+
+		assertThat(madeCoffee)
+				.as("A person should be able to make coffee as many times as he/she wants")
+				.doesNotContain(false);
+	}
+
+	@Test
+	public void testCoffeeMachineJammsInTheMiddle(){
+		CoffeeMachine toBeJammedMachine = new CoffeeMachine();
+		List<Boolean> madeCoffee = new ArrayList<>();
+
+
+		for(int i = 0;i<3;i++){
+			if(i==1){
+				toBeJammedMachine.jam();
+			}
+			madeCoffee.add(brq.makeCoffee(PERSON_CAN_ENTER,toBeJammedMachine));
+		}
+
+		assertThat(madeCoffee)
+				.as("Coffee Machine jammed in the middle of making coffee")
+				.containsExactly(true, false, false);
+
 	}
 
 

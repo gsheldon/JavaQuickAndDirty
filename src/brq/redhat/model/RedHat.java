@@ -49,7 +49,7 @@ public class RedHat {
 		// First, let's try to make coffee
 		boolean madeCoffee = coffeeMachine.makeCoffee();
 
-		// If it was unsuccessful AND the coffee machine is NOT jammed, the coffee machine is probably just empty. Refill it and try again
+		// If it was NOT successful AND the coffee machine is NOT jammed, the coffee machine is probably just empty. Refill it and try again
 		if(!madeCoffee && !coffeeMachine.isJammed()){
 			coffeeMachine.refill();
 			madeCoffee = coffeeMachine.makeCoffee();

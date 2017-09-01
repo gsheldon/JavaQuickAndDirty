@@ -43,4 +43,8 @@ public class CoffeeMachine {
 		return false;
 	}
 
+	public void jam(){
+		this.jammed = true;
+	}
+
 }
